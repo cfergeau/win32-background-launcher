@@ -4,6 +4,7 @@ import (
 	"os"
 	"os/exec"
 	"path/filepath"
+	"syscall"
 )
 
 func argv() []string {
@@ -31,6 +32,7 @@ func main() {
 		panic(err.Error())
 	}
 	cmd := exec.Command(binaryPath, argv()...)
+	cmd.SysProcAttr = &syscall.SysProcAttr{CreationFlags: 0x08000000}
 	cmd.Stdout = os.Stdout
 	cmd.Stdout = os.Stderr
 	err = cmd.Run()
