@@ -20,7 +20,7 @@ Summary:        CRC's windows background launcher
 License:        APL 2.0
 ExcludeArch:    s390x
 URL:            %{gourl}
-ExcludeArch:    armv7hl i686
+ExcludeArch:    armv7hl i686 ppc64le
 Source0:        %{gosource}
 
 BuildRequires: git-core
