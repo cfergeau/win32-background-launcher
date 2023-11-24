@@ -1,6 +1,6 @@
 %global goipath         github.com/crc-org/win32-background-launcher
-%global goname          win32-background-launcher
-Version:                0.0.1
+%global goname          crc-win32-background-launcher
+Version:                0.0.0.1
 
 %gometa
 
@@ -35,7 +35,7 @@ BuildRequires: make
 %prep
 # order of these 3 steps is important, build breaks if they are moved around
 %global archivename win32-background-launcher-%{version}
-%autosetup -S git -n win32-background-launcher-%{version}
+%autosetup -S git -n %{archivename}
 # with fedora macros: goprep -e -k
 install -m 0755 -vd "$(dirname %{gobuilddir}/src/%{goipath})"
 ln -fs "$(pwd)" "%{gobuilddir}/src/%{goipath}"
