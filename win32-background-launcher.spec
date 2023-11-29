@@ -1,6 +1,6 @@
 %global goipath         github.com/crc-org/win32-background-launcher
-%global goname          win32-background-launcher
-Version:                0.0.1
+%global goname          crc-win32-background-launcher
+Version:                0.0.0.1
 
 %gometa
 
@@ -35,7 +35,7 @@ BuildRequires: make
 %prep
 # order of these 3 steps is important, build breaks if they are moved around
 %global archivename win32-background-launcher-%{version}
-%autosetup -S git -n win32-background-launcher-%{version}
+%autosetup -S git -n %{archivename}
 # with fedora macros: goprep -e -k
 install -m 0755 -vd "$(dirname %{gobuilddir}/src/%{goipath})"
 ln -fs "$(pwd)" "%{gobuilddir}/src/%{goipath}"
@@ -46,10 +46,10 @@ make
 %install
 # with fedora macros: gopkginstall
 install -m 0755 -vd %{buildroot}%{_bindir}
-install -m 0755 -vp %{gobuilddir}/src/%{goipath}/bin/win32-background-launcher.exe %{buildroot}%{_bindir}/
+install -m 0755 -vp %{gobuilddir}/src/%{goipath}/bin/crc-background-launcher.exe %{buildroot}%{_bindir}/
 
 install -d %{buildroot}%{_datadir}/%{name}-redistributable/windows
-install -m 0755 -vp %{gobuilddir}/src/%{goipath}/bin/win32-background-launcher.exe %{buildroot}%{_datadir}/%{name}-redistributable/windows/
+install -m 0755 -vp %{gobuilddir}/src/%{goipath}/bin/crc-background-launcher.exe %{buildroot}%{_datadir}/%{name}-redistributable/windows/
 
 %files
 %license %{golicenses}
