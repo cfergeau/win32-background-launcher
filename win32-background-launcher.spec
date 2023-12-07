@@ -46,10 +46,10 @@ make
 %install
 # with fedora macros: gopkginstall
 install -m 0755 -vd %{buildroot}%{_bindir}
-install -m 0755 -vp %{gobuilddir}/src/%{goipath}/bin/crc-background-launcher.exe %{buildroot}%{_bindir}/
+install -m 0755 -vp %{gobuilddir}/src/%{goipath}/bin/win32-background-launcher.exe %{buildroot}%{_bindir}/
 
 install -d %{buildroot}%{_datadir}/%{name}-redistributable/windows
-install -m 0755 -vp %{gobuilddir}/src/%{goipath}/bin/crc-background-launcher.exe %{buildroot}%{_datadir}/%{name}-redistributable/windows/
+install -m 0755 -vp %{gobuilddir}/src/%{goipath}/bin/win32-background-launcher.exe %{buildroot}%{_datadir}/%{name}-redistributable/windows/
 
 %files
 %license %{golicenses}

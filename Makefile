@@ -10,7 +10,7 @@ VERSION := 0.0.0.1
 .PHONY: win32-background-launcher
 win32-background-launcher: $(TOOLS_BINDIR)/go-winres
 	GOOS=windows ./tools/bin/go-winres simply --file-version $(VERSION) --product-name "Red Hat OpenShift Local Background Launcher"
-	GOOS=windows go build -ldflags -H=windowsgui -o bin/crc-background-launcher.exe ./
+	GOOS=windows go build -ldflags -H=windowsgui -o bin/win32-background-launcher.exe ./
 	
 .PHONY: vendor
 vendor: vendor-tools
